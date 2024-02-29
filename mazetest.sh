@@ -109,14 +109,46 @@ else
     echo "FAIL"
 fi
 
+# a case where column lengths are not the same
+echo -e "Inconsistent column length - "
+./maze < data/inconsistentcolumnlength.txt > tmp
+if grep -q "Inconsistent cloumn length" tmp;
+then
+    echo "PASS"
+else
+    echo "FAIL"
+fi
 
-
-
-
+# a case where row lengths are not the same
+echo -e "Inconsistent row length - "
+./maze < data/inconsistentrowlength.txt > tmp
+if grep -q "Inconsistent row length" tmp;
+then
+    echo "PASS"
+else
+    echo "FAIL"
+fi
 
 
 echo -e "Success Tests"
 
-echo -e "
+echo -n "Testing map  - "
+timeout 0.2s ./maze data/mapwithX.txt < input/map.txt > tmp
+if grep -q "You are here!" tmp;
+then
+    echo "PASS"
+else
+    echo "FAIL"
+fi
+
+echo -n "Solving the maze  - "
+timeout 0.2s ./maze data/normalmaze.txt < input/solution.in > tmp
+if grep -q "Congratulation, You have exited the maze!!" tmp;
+then
+    echo "PASS"
+else
+    echo "FAIL"
+fi
+
  
 
