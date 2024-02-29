@@ -132,6 +132,8 @@ fi
 
 echo -e "Success Tests"
 
+
+# testing if the map works
 echo -n "Testing map  - "
 timeout 0.2s ./maze data/mapwithX.txt < input/map.txt > tmp
 if grep -q "You are here!" tmp;
@@ -141,6 +143,7 @@ else
     echo "FAIL"
 fi
 
+# testing the solution of the game
 echo -n "Solving the maze  - "
 timeout 0.2s ./maze data/normalmaze.txt < input/solution.in > tmp
 if grep -q "Congratulation, You have exited the maze!!" tmp;
