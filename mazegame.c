@@ -10,11 +10,6 @@ typedef struct {
     char cells[MAX_ROWS][MAX_COLUMNS];
     int height;
     int width;
-    int player_row;
-    int player_column;
-    int exit_row;
-    int exit_column;
-    int game_over;
 } Maze;
 
 void loadMaze(Maze* maze, const char* filename) {
