@@ -8,7 +8,7 @@ echo -e "Argument Testing"
 # testing a case where the user did not input any arguments, it will not work because there should be an argument
 echo -n "Testing no arguments - "
 ./maze > tmp
-if grep -q "Usage: studentData <filename>" tmp;
+if grep -q "Usage: maze <filename>" tmp;
 then
     echo "PASS"
 else
@@ -18,7 +18,7 @@ fi
 # a case where the user input 2 arguments, it will not work because there should only be one argument
 echo -n "Testing 2 arguments - "
 ./maze x x > tmp
-if grep -q "Usage: studentData <filename>" tmp;
+if grep -q "Usage: maze <filename>" tmp;
 then
     echo "PASS"
 else
@@ -72,7 +72,7 @@ fi
 # a case where the maze has width less than 5
 echo -n "Width less than 5 - "
 ./maze < data/widthlessthanfive.txt > tmp
-if grep -q "Invalid maze width" tmp;
+if grep -q "Invalid maze range" tmp;
 then
     echo "PASS"
 else
@@ -82,7 +82,7 @@ fi
 # a case where the maze has width more than 100
 echo -n "Width more than 100 - "
 ./maze < data/widthmorethanhundred.txt > tmp
-if grep -q "Invalid maze width" tmp;
+if grep -q "Invalid maze range" tmp;
 then
     echo "PASS"
 else
@@ -92,7 +92,7 @@ fi
 # a case where the maze has length less than 5
 echo -n "Length less than 5 - "
 ./maze < data/lengthlessthanfive.txt > tmp
-if grep -q "Invalid maze length" tmp;
+if grep -q "Invalid maze range" tmp;
 then
     echo "PASS"
 else
@@ -102,7 +102,7 @@ fi
 # a case where the maze has length more than 100
 echo -n "Length more than 100 - "
 ./maze < data/lengthmorethanhundred.txt > tmp
-if grep -q "Invalid maze length" tmp;
+if grep -q "Invalid maze range" tmp;
 then
     echo "PASS"
 else
