@@ -70,7 +70,7 @@ else
 fi
 
 # a case where the maze has width less than 5
-echo -e "Width less than 5 - "
+echo -n "Width less than 5 - "
 ./maze < data/widthlessthanfive.txt > tmp
 if grep -q "Invalid maze width" tmp;
 then
@@ -80,7 +80,7 @@ else
 fi
 
 # a case where the maze has width more than 100
-echo -e "Width more than 100 - "
+echo -n "Width more than 100 - "
 ./maze < data/widthmorethanhundred.txt > tmp
 if grep -q "Invalid maze width" tmp;
 then
@@ -90,7 +90,7 @@ else
 fi
 
 # a case where the maze has length less than 5
-echo -e "Length less than 5 - "
+echo -n "Length less than 5 - "
 ./maze < data/lengthlessthanfive.txt > tmp
 if grep -q "Invalid maze length" tmp;
 then
@@ -100,7 +100,7 @@ else
 fi
 
 # a case where the maze has length more than 100
-echo -e "Length more than 100 - "
+echo -n "Length more than 100 - "
 ./maze < data/lengthmorethanhundred.txt > tmp
 if grep -q "Invalid maze length" tmp;
 then
@@ -110,7 +110,7 @@ else
 fi
 
 # a case where column lengths are not the same
-echo -e "Inconsistent column length - "
+echo -n "Inconsistent column length - "
 ./maze < data/inconsistentcolumnlength.txt > tmp
 if grep -q "Inconsistent cloumn length" tmp;
 then
@@ -120,7 +120,7 @@ else
 fi
 
 # a case where row lengths are not the same
-echo -e "Inconsistent row length - "
+echo -n "Inconsistent row length - "
 ./maze < data/inconsistentrowlength.txt > tmp
 if grep -q "Inconsistent row length" tmp;
 then
