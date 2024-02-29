@@ -153,5 +153,5 @@ else
     echo "FAIL"
 fi
 
- 
+rm -f tmp
 
